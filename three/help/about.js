@@ -380,7 +380,7 @@ function onMouseMove1(event) {
             // Convert the mouse position to normalized device coordinates (-1 to 1)
             mouseX = (event.clientX / window.innerWidth) * 2 - 1; // X-axis normalized
             // Calculate the target rotation based on mouse position
-            targetRotationY = mouseX * maxRotationY; 
+            targetRotationY = mouseX * maxRotationY;      
             targetRotationY2 = mouseX * maxRotationY2;// Limit rotation to ±60 degrees
 }
 window.addEventListener('mousemove', onMouseMove1, false);
