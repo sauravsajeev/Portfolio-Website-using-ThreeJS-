@@ -6,11 +6,9 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
-import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass.js';
-import { getFirstObjectWithName } from '/help/help.js';
 import gsap from 'gsap';
 //scene
-import { ShaderPass } from 'https://cdn.jsdelivr.net/npm/three@0.127.0/examples/jsm/postprocessing/ShaderPass.js';
+
 
 const sizes = {
     width:window.innerWidth,
