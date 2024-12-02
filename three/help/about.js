@@ -59,8 +59,6 @@ scenes.add(spotLight)
 //CAMERA
 const cameras = new THREE.PerspectiveCamera(45,sizes.width/sizes.height,0.1,1000)
 cameras.position.set(15, 15,-11);
-const helper = new THREE.CameraHelper(cameras);
-scenes.add(helper);
 
 scenes.add(cameras)
 const loaders = new GLTFLoader();
@@ -244,7 +242,8 @@ function onClick2(event) {
     console.log("inside project");
     updateprojectcam();
    }
-   else{
+   else if (page == 'contact'){
+    updatecontactcam();
    }
       // : null;
 }
@@ -356,6 +355,12 @@ function normalpos(){
   
   lastpos= [-3.4, 7.4,-6.1,-10.121976852416992, 7.701351928710938, -5.95456985473633];
   }
+  else if (page =="contact") {
+    cameras.position.set(-6.5, 5,1);
+    cameras.lookAt(new THREE.Vector3(-10.121976852416992, -6.01351928710938, 0.3956985473633));
+  
+  lastpos= [-6.5, 5,1,-10.121976852416992, -6.01351928710938, 0.3956985473633];
+  }
 }
 
 function updateskillcam(){
@@ -394,7 +399,28 @@ function updateprojectcam(){
     },
     onComplete:normalpos
 });
-lastpos =[-5.5,7.5,1,-5.0699995040893555,  7.079998970031738,  20.9600];
+lastpos =[-6,4,-4.9,-10.121976852416992, 4.01351928710938, -4.8956985473633];
+}
+
+function updatecontactcam(){
+  movementcam =false;
+  model2.rotation.y = 0;
+  cameras.position.set(15, 15,-11);
+  cameras.lookAt(2 ,7.884449005126953, -4.130945205688477);
+  t1.to(cameras.position,{
+    x:-6.5,
+    y:5,
+    z:1,
+    duration:3,
+    ease:"power3.inOut",
+    onUpdate:function(){
+      cameras.lookAt(new THREE.Vector3(-10.121976852416992, -6.01351928710938, 0.3956985473633));
+        
+    },
+    onComplete:normalpos
+});
+
+lastpos =[-6.5,5,1,10.121976852416992, -6.01351928710938, 0.3956985473633];
 }
 
 let mouseX = 0; // Horizontal mouse position

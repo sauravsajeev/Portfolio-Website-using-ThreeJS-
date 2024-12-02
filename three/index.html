@@ -9,7 +9,135 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta name="description" content="">
     <title>Saurav</title>
-    
+   
+    <style>
+      /* Reset and base styles */
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+
+      body {
+          font-family: Arial, sans-serif;
+          line-height: 1.6;
+          color: #000;
+          background-color:#111;
+      }
+
+      /* Container */
+      .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 20px;
+      }
+
+      /* Header */
+      header {
+          background-color: #000;
+          color: #fff;
+          text-align: center;
+          padding: 1rem;
+      }
+
+      header h1 {
+          margin-bottom: 0.5rem;
+      }
+
+      /* Projects section */
+      .projects {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 2rem;
+          padding: 2rem 0;
+      }
+
+      .project {
+          background-color: #fff;
+          border: 2px solid #000;
+          border-radius: 5px;
+          overflow: hidden;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .project:hover {
+          transform: translateY(-5px);
+          box-shadow: 10px 10px 5px lightblue;
+      }
+
+      .project-image {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+      }
+
+      .project-content {
+          padding: 1.5rem;
+      }
+
+      .project-title {
+          font-size: 1.25rem;
+          margin-bottom: 0.5rem;
+          color: #000;
+      }
+
+      .project-description {
+          font-size: 0.9rem;
+          color: #333;
+          margin-bottom: 1rem;
+      }
+
+      .project-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+          margin-bottom: 1rem;
+      }
+
+      .project-tag {
+          background-color: #FADA7D;
+          color: #000;
+          padding: 0.25rem 0.5rem;
+          border-radius: 3px;
+          font-size: 0.8rem;
+      }
+
+      .project-links {
+          display: flex;
+          gap: 1rem;
+      }
+
+      .project-link {
+          text-decoration: none;
+          color: #000;
+          font-weight: bold;
+          font-size: 0.9rem;
+          padding: 0.5rem 1rem;
+          background-color: #FADA7D;
+          border-radius: 3px;
+          transition: background-color 0.3s ease;
+      }
+
+      .project-link:hover {
+          background-color: #000;
+          color: #FADA7D;
+      }
+
+      /* Footer */
+      footer {
+          text-align: center;
+          padding: 1rem;
+          background-color: #000;
+          color: #fff;
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+          .projects {
+              grid-template-columns: 1fr;
+          }
+      }
+  </style>
   </head>
   <body>
     <div id = "preloader"></div>
@@ -23,7 +151,7 @@
         <a class = "saudu" href = "#about"  onclick = "reset('about');switchColors(this);"  ><i class="fa-solid fa-address-card"></i> <span>About Me</span></a>
         <a class = "saudu" href = "#about" onclick = "reset('skills');switchColors(this);"><i class="fa-solid fa-hammer"></i> <span>Skills</span></a>
         <a class = "saudu" href = "#about" onclick = "switchColors(this);reset('project');"><i class="fa-solid fa-tarp"></i> <span>My Projects</span>  </a>
-        <a class = "saudu" href = "#home" onclick = "switchColors(this)"><i class="fa-solid fa-address-book"></i> <span>Contact Me</span>  </a>
+        <a class = "saudu" href = "#about" onclick = "switchColors(this);reset('contact');"><i class="fa-solid fa-address-book"></i> <span>Contact Me</span>  </a>
       </div>
       <div class="socials">
         <p>©</p>
@@ -52,9 +180,74 @@
         <div class="model-canvas"></div>
       </div>
      </div>
-    <div id ="content"></div>
+    <div id ="content">    <header>
+      <div class="container">
+          <h1>My Projects</h1>
+          <p>A showcase of my best work</p>
+      </div>
+  </header>
+
+  <main class="container">
+      <section class="projects">
+          <article class="project">
+              <img src="/templates/portold.png" alt="E-commerce Website" class="project-image">
+              <div class="project-content">
+                  <h2 class="project-title">Portfolio Website</h2>
+                  <p class="project-description">A fully responsive portfolio website built with html,js and css.</p>
+                  <div class="project-tags">
+                      <span class="project-tag">HTML</span>
+                      <span class="project-tag">CSS</span>
+                      <span class="project-tag">JS</span>
+                  </div>
+                  <div class="project-links">
+                      <a href="#" class="project-link">Live Demo</a>
+                      <a href="https://github.com/sauravsajeev/Portfolio-website.git" class="project-link">View Code</a>
+                  </div>
+              </div>
+          </article>
+
+          <article class="project">
+              <img src="https://www.sketchappsources.com/resources/source-image/weather-app-icons.jpg" alt="Weather App" class="project-image">
+              <div class="project-content">
+                  <h2 class="project-title">Weather App</h2>
+                  <p class="project-description">A weather application that fetches real-time weather data using a third-party API.</p>
+                  <div class="project-tags">
+                      <span class="project-tag">JavaScript</span>
+                      <span class="project-tag">API</span>
+                      <span class="project-tag">CSS</span>
+                  </div>
+                  <div class="project-links">
+                      <a href="#" class="project-link">Live Demo</a>
+                      <a href="https://github.com/sauravsajeev/Weather-app-using-node.js.git" class="project-link">View Code</a>
+                  </div>
+              </div>
+          </article>
+
+          <article class="project">
+              <img src="https://miro.medium.com/v2/resize:fit:1400/1*7ltc4LT60xBzn150-Njraw.png" alt="Task Manager" class="project-image">
+              <div class="project-content">
+                  <h2 class="project-title">Spotify Clone</h2>
+                  <p class="project-description">A react music player application with user authentication.</p>
+                  <div class="project-tags">
+                      <span class="project-tag">React</span>
+                      <span class="project-tag">API</span>
+                  </div>
+                  <div class="project-links">
+                      <a href="#" class="project-link">Live Demo</a>
+                      <a href="https://github.com/sauravsajeev/musicplayer.git" class="project-link">View Code</a>
+                  </div>
+              </div>
+          </article>
+      </section>
+  </main></div>
   </div>
     <div id="app"></div>
+    <script>
+      var loader = document.getElementById("preloader");
+  window.addEventListener("load",function(){
+    loader.style.display = "none";
+  })
+  </script>
     <script type="x-shader/x-vertex" id="vertexshader">
       varying vec2 vUv;
       void main() {
@@ -73,6 +266,10 @@
     <script type="module" src="/main.js"></script>
     <script type="module" src="/help/about.js"></script>
     <script>
+      if (performance.navigation.type === 1) {
+        // Redirect to the home page
+        window.location.href = '/';
+    }
       function switchColors(element)  
 {  
 links=document.getElementsByTagName("a") ;  
@@ -80,11 +277,9 @@ for (var i = 0 ; i < links.length ; i ++)
 links.item(i).style.color = 'white' ;  
 element.style.color='#FADA7D' ;  
 }  
-var loader = document.getElementById("preloader");
-window.addEventListener("load",function(){
-  loader.style.display = "none";
-})
+
     </script>
+ 
     <script src="/help/hash-router.js"></script>
   </body>
 </html>
